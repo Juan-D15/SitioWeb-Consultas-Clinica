@@ -1,0 +1,67 @@
+{% extends 'layouts/base.html' %} {% load static %}
+
+{% block title %}
+    Administración | {{ block.super }}
+{% endblock %}
+
+{% block content %}
+<!-- Main -->
+<section class="wrapper style1">
+  <div class="container">
+    <header class="major">
+      <h2>Inicio de Sesión</h2>
+      <p>Ingrese su nombre de usuario y contraseña para acceder</p>
+    </header>
+    <form method="post" action="{% url 'superuser-login' %}">
+      {% csrf_token %}
+      <div class="row gtr-150 aln-center">
+        <!-- Login Form -->
+        <div class="col-6 col-12-medium">
+          <div class="row gtr-uniform gtr-50">
+            <div class="col-12">
+              <input
+                type="text"
+                name="username"
+                id="username"
+                value=""
+                placeholder="Nombre de Usuario"
+                required
+              />
+            </div>
+            <div class="col-12">
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Contraseña"
+                required
+              />
+            </div>
+            <!-- Error Message -->
+            {% if form.errors %}
+              <div class="col-12">
+                <div class="alert alert-danger" role="alert">
+                  Nombre de usuario o contraseña incorrectos.
+                </div>
+              </div>
+            {% endif %}
+            <!-- Submit Button -->
+            <div class="col-12">
+              <ul class="actions special">
+                <li>
+                  <input
+                    type="submit"
+                    id="boton"
+                    value="Iniciar Sesión"
+                    class="primary"
+                  />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+{% endblock %}

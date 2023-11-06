@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block title %} Clinica {% endblock %}</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{% static '/images/icono_logo.png' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="{% static '/css/main.css' %}" />
+  </head>
+  <body class="is-preload">
+    <div id="page-wrapper">
+      <!-- Header -->
+      <div id="header">
+        <!-- Logo -->
+        <h1>
+          <a href="/" id="logo">Eterna Primavera </a
+          ><img
+            id="img_logo"
+            src="https://icones.pro/wp-content/uploads/2021/06/icone-sante-vert.png"
+            alt="logo"
+          />
+        </h1>
+        <!-- Nav -->
+        <nav id="nav">
+          <ul>
+            {% if user.is_staff or user.is_superuser %}
+            <li class="{% if user.is_superuser %}current{% else %}{% if request.resolver_match.url_name == 'lista_general' %}current{% endif %}{% endif %}">
+              <a href="{% url 'lista_general' %}">Administración</a>
+            </li>
+            <li class="{% if request.resolver_match.url_name == 'logout' %}current{% endif %}">
+              <a href="{% url 'logout' %}" onclick="return confirm('¿Estás seguro de que quieres cerrar sesión?');">Cerrar Sesión</a>
+            </li>            
+            {% else %}
+            <li class="{% if request.resolver_match.url_name == 'index' %}current{% endif %}">
+              <a href="{% url 'index' %}">Inicio</a>
+            </li>
+            <li class="{% if request.resolver_match.url_name == 'consultas' %}current{% endif %}">
+              <a href="{% url 'consultas' %}">Consulta</a>
+            </li>
+            <li class="{% if request.resolver_match.url_name == 'login' %}current{% endif %}">
+              <a href="{% url 'login' %}">Administración</a>
+            </li>
+            {% endif %}
+          </ul>
+        </nav>
+      </div>
+      <!-- Contenido -->
+      {% block content %} {% endblock %}
+
+      <!-- Footer -->
+      <div id="footer">
+        <div class="container">
+          <div class="row">
+            <!-- Datos de Contacto -->
+            <section class="col-6 col-12-narrower">
+              <h3>Contacto</h3>
+              <ul class="contacto">
+                <li><strong>Dirección:</strong> Cobán Alta Verapaz</li>
+                <li><strong>Teléfono:</strong> (502) 34145633</li>
+                <li><strong>Email:</strong> info@eternaprimavera.com</li>
+              </ul>
+            </section>
+
+            <!-- Redes Sociales e Iconos, si deseas mantenerlos -->
+            <section class="col-6 col-12-narrower">
+              <!-- Icons -->
+              <ul class="icons">
+                <li>
+                  <a href="#" class="icon brands fa-twitter"
+                    ><span class="label">Twitter</span></a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="icon brands fa-facebook-f"
+                    ><span class="label">Facebook</span></a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="icon brands fa-whatsapp"
+                    ><span class="label">WhatsApp</span></a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="icon brands fa-instagram"
+                    ><span class="label">Instagram</span></a
+                  >
+                </li>
+              </ul>
+            </section>
+          </div>
+        </div>
+        <!-- Copyright -->
+        <div class="copyright">
+          <ul class="menu">
+            <li>
+              &copy; Clínica Eterna Primavera. Todos los derechos reservados
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="{% static '/js/jquery.min.js' %}"></script>
+    <script src="{% static '/js/jquery.dropotron.min.js' %}"></script>
+    <script src="{% static '/js/browser.min.js' %}"></script>
+    <script src="{% static '/js/breakpoints.min.js' %}"></script>
+    <script src="{% static '/js/util.js' %}"></script>
+    <script src="{% static '/js/main.js' %}"></script>
+  </body>
+</html>

@@ -1,0 +1,136 @@
+{% extends 'layouts/base.html' %} {% load static %} {% block content %}
+<!-- Banner Inicio -->
+<section class="wrapper style2">
+  <div class="container">
+    <header class="major">
+      <h2>Cuidando tu vida en cada etapa con excelencia y calidez</h2>
+      <p>Desde 2002, preservando la vida de generaciones</p>
+    </header>
+  </div>
+</section>
+<!-- Iconos Valores -->
+<section class="wrapper style1">
+  <div class="container">
+    <div class="row gtr-200">
+      <section class="col-4 col-12-narrower">
+        <div class="box highlight">
+          <i class="icon solid major fa-flag"></i>
+          <h3>MISIÓN</h3>
+          <p>
+            Proporcionar servicios de salud de alta calidad y accesibles para
+            mejorar el bienestar de nuestra comunidad. Nos comprometemos a
+            ofrecer una atención compasiva y personalizada, utilizando las
+            últimas innovaciones y tecnologías en el campo médico para
+            garantizar el mejor tratamiento posible para nuestros pacientes.
+          </p>
+        </div>
+      </section>
+      <section class="col-4 col-12-narrower">
+        <div class="box highlight">
+          <i class="icon solid major fa-eye"></i>
+          <h3>VISIÓN</h3>
+          <p>
+            Ser reconocidos como líderes en el cuidado de la salud en nuestra
+            región, expandiendo nuestro alcance para ofrecer un espectro
+            completo de servicios médicos preventivos, diagnósticos y
+            terapéuticos. Aspiramos a crear un entorno donde la seguridad, la
+            eficacia y el trato humano sean la norma, y donde cada paciente se
+            sienta valorado y escuchado.
+          </p>
+        </div>
+      </section>
+      <section class="col-4 col-12-narrower">
+        <div class="box highlight">
+          <i class="icon solid major fa-bullseye"></i>
+          <h3>OBJETIVOS</h3>
+          <p>
+            Proporcionar un acceso oportuno y eficiente a la atención médica,
+            reduciendo los tiempos de espera para consultas y tratamientos.
+          </p>
+          <p>
+            Fomentar la investigación y la adopción de nuevas tecnologías y
+            tratamientos que mejoren la atención y los resultados de los
+            pacientes.
+          </p>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
+
+<!-- Imagenes Descripción -->
+<section class="wrapper style1">
+  <div class="container">
+    <div class="row">
+      <section class="col-6 col-12-narrower">
+        <div class="box post">
+          <a href="#" class="image left"
+            ><img
+              src="https://st4.depositphotos.com/1325771/39154/i/450/depositphotos_391545206-stock-photo-happy-male-medical-doctor-portrait.jpg"
+              alt="Médicos_img"
+          /></a>
+          <div class="inner">
+            <h3>Médicos Especializados</h3>
+            <p>
+              Un equipo de profesionales de la salud altamente cualificados,
+              dedicados a proporcionar atención médica excepcional.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="col-6 col-12-narrower">
+        <div class="box post">
+          <a href="#" class="image left"
+            ><img src="https://media.istockphoto.com/id/1170115423/es/foto/m%C3%A1quina-de-escaneo-c-arm.jpg?s=612x612&w=0&k=20&c=f7DzeYtf0DpqD4xrlnaSAI6X-u4t36114YtNKAGRBG8=" alt="Equipo_img"
+          /></a>
+          <div class="inner">
+            <h3>Equipo y Tecnología Médica</h3>
+            <p>
+              Contamos con tecnología médica de punta, asegurando diagnósticos precisos y tratamientos efectivos con equipos de vanguardia en un entorno seguro y moderno.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="row">
+      <section class="col-6 col-12-narrower">
+        <div class="box post">
+          <a href="#" class="image left"
+            ><img src="https://www.nairadelcampo.es/wp-content/uploads/2019/05/CIRUG%C3%8DA-min-460x380.jpg" alt="Tratamientos_img"
+          /></a>
+          <div class="inner">
+            <h3>Procedimientos y Tratamientos</h3>
+            <p>
+              Ofrecemos una amplia gama de procedimientos y tratamientos médicos, ejecutados con precisión y cuidado.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="col-6 col-12-narrower">
+        <div class="box post">
+          <a href="#" class="image left"
+            ><img src="https://www.salesforce.com/mx/blog/wp-content/uploads/sites/11/2023/09/la-importancia-de-la-atencion-al-paciente.jpg" alt="Atención_img"
+          /></a>
+          <div class="inner">
+            <h3>Atención al Paciente</h3>
+            <p>
+              Priorizamos una atención al paciente atenta y personalizada, asegurando que cada visita sea confortable, informada y adaptada a las necesidades individuales de salud y bienestar.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta" class="wrapper style3">
+  <div class="container">
+    <header>
+      <h2>¿Quieres hacer una consulta?</h2>
+      <a href="{% url 'consultas' %}" class="button">Consulta</a>
+    </header>
+  </div>
+</section>
+
+{% endblock %}

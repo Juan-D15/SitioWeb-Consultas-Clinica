@@ -1,0 +1,166 @@
+{% extends 'layouts/base.html' %} {% load static %} {% block title %} Consultas
+| {{ block.super }} {% endblock %} {% block content %}
+<!-- Main -->
+<section class="wrapper style1">
+  <div class="container">
+    <header class="major">
+      <h2>Formularios de Consulta</h2>
+      <p>Ingrese la información requerida en los siguientes formularios.</p>
+    </header>
+    <form method="post" action="{% url 'cliente_medico_create' %}">
+      {% csrf_token %}
+      <div class="row gtr-150">
+        <!-- Cliente Form -->
+        <div class="col-6 col-12-medium">
+          <h3>Cliente</h3>
+          <div class="row gtr-uniform gtr-50">
+            <div class="col-12">
+              <input
+                type="text"
+                name="nombre"
+                id="nombre"
+                value=""
+                placeholder="Nombre Completo"
+                oninput="this.value=this.value.replace(/[^a-zA-Z\s'-]/g,'');"
+                required
+              />
+            </div>
+            <div class="col-12">
+              <input
+                type="text"
+                name="dpi"
+                id="dpi"
+                value=""
+                placeholder="DPI"
+                oninput="this.value=this.value.replace(/[^0-9]/g,'');"
+                required
+              />
+            </div>
+            <div class="col-12">
+              <input
+                type="text"
+                name="direccion"
+                id="direccion"
+                value=""
+                placeholder="Dirección"
+                required
+              />
+            </div>
+            <div class="col-12">
+              <input
+                type="text"
+                name="telefono"
+                id="telefono"
+                value=""
+                placeholder="Número de Teléfono"
+                oninput="this.value=this.value.replace(/[^0-9()+\s-]/g,'');"
+                required
+              />
+            </div>
+            <div class="col-12">
+              <input
+                type="date"
+                class="fecha_n"
+                name="nacimiento"
+                id="nacimiento"
+                placeholder="Fecha de Nacimiento"
+                required
+              />
+            </div>
+            <div class="col-12">
+              <textarea
+                name="razon_visita"
+                id="razon_visita"
+                class="textarea_m"
+                placeholder="Razón de la Visita"
+                rows="4"
+                required
+              ></textarea>
+            </div>
+            <div class="col-12">
+              <textarea
+                name="receta_medica"
+                id="receta_medica"
+                class="textarea_m"
+                placeholder="Receta Médica"
+                rows="4"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+        <!-- Doctor Form -->
+        <div class="col-6 col-12-medium">
+          <h3>Médico</h3>
+          <div class="row gtr-uniform gtr-50">
+            <div class="col-12">
+              <input
+                type="text"
+                name="nombre_medico"
+                id="nombre_medico"
+                value=""
+                placeholder="Nombre del Médico"
+                oninput="this.value=this.value.replace(/[^a-zA-Z\s'-]/g,'');"
+                required
+              />
+            </div>
+            <div class="col-12">
+              <input
+                type="text"
+                name="telefono_medico"
+                id="telefono_medico"
+                value=""
+                placeholder="Número de Teléfono"
+                oninput="this.value=this.value.replace(/[^0-9()+\s-]/g,'');"
+                required
+              />
+            </div>
+            <div class="col-12">
+              <input
+                type="text"
+                name="numero_colegiado"
+                id="numero_colegiado"
+                value=""
+                placeholder="Número de Colegiado"
+                required
+              />
+            </div>
+            <div class="col-12">
+              <input
+                type="text"
+                name="especialidad"
+                id="especialidad"
+                value=""
+                placeholder="Especialidad"
+                required
+              />
+            </div>
+            <div class="col-12">
+              <textarea
+                name="diagnostico"
+                id="diagnostico"
+                class="textarea_m"
+                placeholder="Diagnóstico"
+                rows="4"
+                required
+              ></textarea>
+            </div>
+          </div>
+        </div>
+        <!-- Submit Button -->
+        <div class="col-12">
+          <ul class="actions special">
+            <li>
+              <input
+                type="submit"
+                id="boton"
+                value="Registrar Consulta"
+                class="primary"
+              />
+            </li>
+          </ul>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+{% endblock %}

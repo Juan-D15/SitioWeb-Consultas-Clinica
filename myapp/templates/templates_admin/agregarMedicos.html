@@ -1,0 +1,38 @@
+{% extends 'layouts/base.html' %} 
+{% load crispy_forms_tags %}
+{% block title %}
+    Agregar Médicos | {{ block.super }}
+{% endblock %}
+{% block content %}
+			<!-- Main -->
+    <section class="wrapper style1">
+        <div class="container">
+            <div id="content">
+                {% if form.errors %}
+                    <div class="alert alert-success" role="alert">
+                        Error
+                    </div>
+                {% endif %}
+
+                <div class="inner">
+                    <h3>Registro de Médicos</h3>
+                </div>
+                
+                <form method="post" action="{% url "agregar_medicos" %}">
+                    {% csrf_token %}
+                    {% if mensaje %}
+                        <div class="alert alert-success" role="alert">
+                            Guardado con exito
+                        </div>
+                    {% endif %}
+                    
+                    {{ form|crispy }}
+
+                    <button type="submit" class="btn btn-outline-success">Guardar</button>
+                    <a class="btn btn-outline-success" href="{% url "lista_general" %}">Cancelar</a>
+                </form>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
