@@ -10,6 +10,11 @@ urlpatterns = [
     path("administrador/", LoginView.as_view(template_name="login.html"), name="login"),
     path("logout/", LogoutView.as_view(), name="logout"),
     path(
+        "agregar-clientes/",
+        views.agregar_clientes,
+        name="agregar_clientes",
+    ),
+    path(
         "editar-clientes/<int:id_cliente>",
         views.editar_clientes,
         name="editar_clientes",

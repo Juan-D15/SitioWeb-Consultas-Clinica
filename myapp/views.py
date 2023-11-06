@@ -30,7 +30,17 @@ def lista_general(request):
     )
 
 
-# funciones para listar, editar y eliminar Clientes
+# funciones para listar, agregar, editar y eliminar Clientes
+def agregar_clientes(request):
+    if request.method == "POST":
+        form = ClienteForm(request.POST)
+        if form.is_valid():
+            form.save()
+    else:
+        form = ClienteForm()
+    return render(request, "templates_admin/agregarClientes.html", {"form": form})
+
+
 def editar_clientes(request, id_cliente):
     cliente = Clientes.objects.filter(id=id_cliente).first()
     form = ClienteForm(instance=cliente)
