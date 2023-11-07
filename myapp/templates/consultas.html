@@ -21,7 +21,7 @@
                 id="nombre"
                 value=""
                 placeholder="Nombre Completo"
-                oninput="this.value=this.value.replace(/[^a-zA-Z\s'-]/g,'');"
+                oninput="this.value=this.value.replace(/[^\p{L}\p{M}\s'-]/gu,'');"
                 maxlength="20"
                 required
               />
@@ -103,7 +103,7 @@
                 id="nombre_medico"
                 value=""
                 placeholder="Nombre del Médico"
-                oninput="this.value=this.value.replace(/[^a-zA-Z\s'-]/g,'');"
+                oninput="this.value=this.value.replace(/[^\p{L}\p{M}\s'-]/gu,'');"
                 maxlength="100"
                 required
               />
